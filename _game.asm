@@ -30,16 +30,23 @@ DATASEG
 	test_st db "hello world$"
 	New_Line db 10, 13, '$' ;used in proc - NewLine
 	;</strings>
+
+
+
+
+
+
 CODESEG
+
+
+
 start:
 	mov ax, @data
 	mov ds, ax
 
-
-
-	mov dx, offset test_st
-	mov ah, 9
-	int 21h
+	mov dl, 'w'
+	call PrintChar
+	
 
 
 exit:
@@ -391,7 +398,6 @@ endp
 ;===========================
 proc PrintString
 	push ax
-	ldsdfjslkdjf
 	
 	mov ah, 9h
 	int 21h
